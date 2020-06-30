@@ -14,28 +14,44 @@
 	<%
 		Connection con = Connector.getConnection();
 	Statement stmt = con.createStatement();
-	String sql = "SELECT * FROM user";
+	String sql = "SELECT * FROM user ";
 	ResultSet rs = stmt.executeQuery(sql);
 	%>
-	<a href="/web/car_list.jsp"><button>회원정보입력</button></a>
+	<a href="/web/user/user_insert.jsp"><button>회원정보입력</button></a>
+	<form action="/web/user/user_del_ok.jsp">
+	<button>삭제</button>
 	<table border="1">
 		<tr>
+			<th><input type="checkbox" id="all" onclick="checkAll()"></th>
 			<th>번호</th>
-			<th>이름</th>
-			<th>아이디</th>
+			<th>ID</th>
+			<th>유저명</th>
 		</tr>
 		<%
 			while (rs.next()) {
-		%>
+		%> 
 
 		<tr>
-			<th><%=rs.getInt("num")%></th>
-			<th><%=rs.getString("NAME")%></th>
-			<th><%=rs.getString("ID")%></th>
+			<td><input type="checkbox" NAME="ch" VALUE="<%=rs.getInt("num")%>"></td>
+			<td><%=rs.getString("num")%></td>
+			<td><%=rs.getString("NAME")%></td>
+			<td><%=rs.getString("ID")%></td>
 			<%
 				}
 			%>
 		
 	</table>
+	</form>
+	
+	<script>
+		function checkAll(){
+			var obj = document.getElementById('all');
+			var objs = document.getElementsByName('ch'); 
+			for(var i =0;i<objs.length;i++){
+				objs[i].checked = obj.checked;
+			}
+			
+		}
+	</script>
 </body>
 </html>
