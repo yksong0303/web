@@ -17,7 +17,7 @@
 	String sql = "SELECT * FROM user";
 	ResultSet rs = stmt.executeQuery(sql);
 	%>
-	<a href="/web/car_list.jsp"></a><button>회원정보입력</button></a>
+	<a href="/web/car_list.jsp"><button>회원정보입력</button></a>
 	<table border="1">
 		<tr>
 			<th>번호</th>
