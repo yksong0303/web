@@ -12,5 +12,10 @@ PreparedStatement ps = conn.prepareStatement(sql);
 for (String num : nums) {
 	ps.setInt(1, Integer.parseInt(num));
 	ps.executeUpdate();
+	
 }
+
 %>
+<script>
+	location.href="/web/user/user_list.jsp"
+</script>

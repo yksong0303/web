@@ -33,9 +33,9 @@
 
 		<tr>
 			<td><input type="checkbox" NAME="ch" VALUE="<%=rs.getInt("num")%>"></td>
-			<td><%=rs.getString("num")%></td>
-			<td><%=rs.getString("NAME")%></td>
-			<td><%=rs.getString("ID")%></td>
+			<td><a href="/web/user/user_update.jsp?num=<%=rs.getInt("num")%>"><%=rs.getString("num")%></a></td>
+			<td><a href="/web/user/user_update.jsp?num=<%=rs.getInt("num")%>"><%=rs.getString("NAME")%></a></td>
+			<td><a href="/web/user/user_update.jsp?num=<%=rs.getInt("num")%>"><%=rs.getString("ID")%></a></td>
 			<%
 				}
 			%>
