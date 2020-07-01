@@ -20,7 +20,7 @@ public class MapTest{
 			pList.add(p);
 			
 		}
-		for(int i = 0;i<=10;i++) {
+		for(int i = 0;i<10;i++) {
 			Map<String,String> p = pList.get(i);
 			System.out.println("이름 : " + p.get("name"));
 			System.out.println("나이 : " + p.get("age"));
